@@ -9,7 +9,7 @@ const userpostroute = require('./routes/userroute');
 const {graphqlHTTP}=require('express-graphql');
 const graphqlSchema=require('./graphql/schema');
 const graphqlResolver=require('./graphql/resolvers');
-
+const port=process.env.PORT||4000;
 const app = express();
 const mongoose = require('mongoose');
 app.use(bodyParser.json());
@@ -35,7 +35,7 @@ app.use('/graphql',graphqlHTTP({
 }));
 mongoose.connect('mongodb://127.0.0.1:27017/userpost')
     .then(res => {
-         app.listen(4000);
+         app.listen(port);
         
 
     });
