@@ -1,4 +1,4 @@
-
+require("dotenv").config()
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     next();
 });
 const product = require("../backend/model/post");
-
+console.log(port);
 app.use('/post', postroute);
 app.use('/user', userpostroute);
 app.use('/graphql',graphqlHTTP({
@@ -37,7 +37,6 @@ mongoose.connect('mongodb+srv://jaisoni:JaiSoni@react-node-app.ciiujfr.mongodb.n
     .then(res => {
          app.listen(port);
         
-
     });
 
 
