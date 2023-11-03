@@ -4,7 +4,6 @@ const io=require('../socket');
 
 let no_of_item=2;
 exports.getPosts = (req, res, next) => {
-// console.log();
 let pageno=(req.params.page)||1;
 let totalitems;
 
