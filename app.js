@@ -33,7 +33,10 @@ app.use('/graphql',graphqlHTTP({
     graphiql: true,
 
 }));
-mongoose.connect('mongodb+srv://jaisoni:JaiSoni@react-node-app.ciiujfr.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://jaisoni:JaiSoni@react-node-app.ciiujfr.mongodb.net/?retryWrites=true&w=majority' ,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
     .then(res => {
          app.listen(port);
         
