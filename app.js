@@ -1,4 +1,4 @@
-require("dotenv").config()
+
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -23,7 +23,7 @@ app.use((req, res, next) => {
     }
     next();
 });
-const product = require("../backend/model/post");
+// const product = require("../backend/model/post");
 console.log(port);
 app.use('/post', postroute);
 app.use('/user', userpostroute);
